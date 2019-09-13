@@ -578,8 +578,15 @@ def sort_take(
         sort_indexes = np.array(range(top_n))
 
     data_dict = data_dict.copy()
+    print("sort_indexes: ")
+    print(sort_indexes)
     for key in data_dict.keys():
         if key in ["names", "scores", "values", "left_names", "right_names"]:
+            print("key: ")
+            print(key)
+            print("data_dict[key]: ")
+            print(data_dict[key])
+            print(type(data_dict[key]))
             if reverse_results:
                 data_dict[key] = [data_dict[key][i] for i in reversed(sort_indexes)]
             else:
